@@ -1,0 +1,10 @@
+Java5.0版本引入注解后，就成为java平台中非常重要的一部分。开发过程中，我们也时常在应用代码中看到诸如@Override,@Deprecated这样的注解
+注解：用一个词就可以描述注解，那就是元数据，即一种描述数据的数据。所以说注解是源代码的元数据
+@Override
+public String toString(){
+	return "This is String Representation of current object.";
+}
+上面的代码中，重写了toString()方法并使用了@Override注解，但是，即使不使用注解标记代码，程序也能正常执行。事实上，@Override告诉编译器这个方法是一个重写的方法，如果父类中不存在该方法，编译器便会报错，提示该方法没有重写父类的方法
+Annotation是一种应用于类，方法，参数，变量，构造器及包声明中的特殊修饰符。它是一种由JSR-175标准选择来描述元数据的一种工具。
+为什么要引入注解？
+使用Annotation之前(甚至在使用之后)，XML被广泛的应用于描述元数据。不知何时，
