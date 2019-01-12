@@ -1,0 +1,26 @@
+java中的static简单含义就是静态修饰符，大家都知道，在程序中任何变量或者代码都是在编译时由系统自动分配内存来
+存储的，而所谓静态就是指在编译后所分配的内存会一直存在，直到程序退出内存才会释放这个空间，也就是说只要程序在
+运行，那么这块内存会一直存在，这样做的意义：
+在java程序里面，所有的东西都是对象，而对象的抽象就是类，对于一个类而言，如果要使用他的成员，那么普通情况下必须
+实例化对象后，通过对象的引用才能够访问这些成员，但是有种情况例外，就是该成员用static声明的。在java类库当中很多
+类成员都声明为static，可以让用户不需要实例化对象就可以引用成员，最基本的就是Integer.parseInt(),Float.parseFloat
+()等等。
+接下来讲一下被static修饰后的变量的值的问题，刚才在前面讲过，被static修饰后的成员，在编译时由内存分配一块内存空间，
+直到程序结束运行才会释放，
+
+public class TStatic {
+	static int i;
+	public TStatic() {
+		i=4;
+	}
+	public TStatic(int j) {
+		i=j;
+	}
+	public static void main(String[] args) {
+		TStatic t=new TStatic(5);
+		TStatic tt=new TStatic(6);
+		System.out.println(t.i);
+		System.out.println(tt.i);
+		System.out.println(t.i);
+	}
+}
